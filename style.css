@@ -1,0 +1,301 @@
+/* --- CONFIGURAÇÕES GLOBAIS E RESET --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Faz o 'padding' não aumentar o tamanho da caixa */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #46e4af; /* Um fundo cinza/verde bem claro */
+    color: #333;
+    line-height: 1.6; /* Espaçamento entre linhas */
+}
+
+/* --- CONTÊINER PRINCIPAL --- */
+.page-container {
+    width: 100%;
+    max-width: 850px; /* Largura máxima da página */
+    margin: 20px auto; /* Centraliza a página na tela */
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+    overflow: hidden; /* Garante que as bordas arredondadas funcionem */
+}
+
+main {
+    padding: 24px 32px; /* Espaçamento interno para o conteúdo principal */
+}
+
+/* Separação entre as seções (Sobre, Preços, Contato) */
+section {
+    margin-bottom: 48px;
+}
+
+/* --- ESTILOS DO CABEÇALHO (PROFILE-HEADER) --- */
+.profile-header {
+    background: linear-gradient(to bottom, #e0f2f1, #ffffff); /* Gradiente suave */
+    padding: 24px 32px;
+    border-bottom: 1px solid #dde;
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* Espaço entre os itens do cabeçalho */
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between; /* Itens nas pontas */
+    align-items: center;
+}
+
+.avatar-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.avatar-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%; /* Deixa a imagem redonda */
+    border: 2px solid #00796b; /* Borda verde */
+}
+
+.info strong {
+    font-size: 1.2rem;
+    display: block; /* Faz o nome ficar em cima */
+}
+.info span {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.btn-header-whatsapp {
+    background-color: #25D366; /* Cor do WhatsApp */
+    color: white;
+    padding: 10px 16px;
+    border-radius: 50px; /* Pílula */
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.2s;
+}
+.btn-header-whatsapp:hover {
+    transform: scale(1.05); /* Efeito ao passar o mouse */
+}
+
+.tag {
+    align-self: flex-start;
+    background: #00796b; /* Verde escuro */
+    color: white;
+    font-weight: bold;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+
+.profile-header h2 {
+    font-size: 1.5rem;
+    color: #004d40; /* Verde bem escuro */
+}
+.profile-header p {
+    font-size: 1rem;
+    color: #444;
+}
+
+/* --- ESTILOS DE SEÇÃO GENÉRICOS --- */
+.titulo-secao {
+    font-size: 1.8rem;
+    color: #004d40;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.subtitulo-secao {
+    font-size: 1.1rem;
+    color: #555;
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+/* --- SEÇÃO SOBRE --- */
+#about p {
+    margin-bottom: 24px;
+}
+.info-list li {
+    list-style-position: inside; /* Coloca o marcador para dentro */
+    margin-bottom: 8px;
+}
+
+/* --- SEÇÃO DE PREÇOS --- */
+.grid-prices {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas de tamanho igual */
+    gap: 24px;
+}
+
+.card-preco {
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.card-preco:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* Card popular em destaque */
+.card-preco.popular {
+    border: 2px solid #00796b;
+    transform: scale(1.05); /* Deixa ele maior */
+}
+
+.badge-preco {
+    align-self: flex-start;
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+}
+.tipo-basico { background-color: #ffe0b2; color: #e65100; }
+.tipo-popular { background-color: #00796b; color: white; }
+.tipo-completo { background-color: #b2dfdb; color: #004d40; }
+
+.card-preco h3 {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+}
+.preco {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #004d40;
+}
+.preco span {
+    font-size: 1rem;
+    font-weight: normal;
+    color: #555;
+}
+.preco-por-aula {
+    font-size: 0.9rem;
+    color: #111;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.checklist-preco {
+    list-style: none; /* Remove bolinhas */
+    flex-grow: 1; /* Faz a lista crescer para empurrar o botão para baixo */
+}
+.checklist-preco li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+}
+.checklist-preco i { font-size: 1.1rem; }
+.check-red { color: #e53935; }
+.check-blue { color: #00796b; }
+.check-green { color: #43a047; }
+
+
+/* --- BOTÕES --- */
+.btn {
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    display: block; /* Faz o botão ocupar a largura */
+    margin-top: 24px;
+    transition: background-color 0.2s;
+}
+.btn-primario {
+    background-color: #00796b;
+    color: white;
+}
+.btn-primario:hover { background-color: #004d40; }
+
+.btn-secundario {
+    background-color: #f4f7f6;
+    color: #00796b;
+    border: 2px solid #00796b;
+}
+.btn-secundario:hover { background-color: #e0f2f1; }
+
+
+/* --- SERVIÇOS AVULSOS --- */
+.servicos-avulsos {
+    margin-top: 48px;
+    text-align: center;
+}
+.grid-avulsos {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 colunas */
+    gap: 24px;
+    text-align: left;
+}
+.card-avulso {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+.card-avulso h4 {
+    font-size: 1.1rem;
+    color: #004d40;
+    margin-bottom: 8px;
+}
+/* --- SEÇÃO CONTATO --- */
+.grid-contato {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; 
+    gap: 24px;
+}
+.card-contato {
+    border: 1px solid #c2d6d0;
+    border-radius: 12px;
+    padding: 24px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.contato-icon {
+    font-size: 3rem; /* Tamanho do ícone */
+    margin-bottom: 16px;
+}
+
+.icon-whats { color: #25D366; }
+.icon-email { color: #d12e2e; }
+.icon-insta { color: #cf115d; } 
+
+.card-contato h3 {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+}
+.contato-info {
+    font-size: 1.1rem;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+.btn-contato {
+    text-decoration: none;
+    color: #00796b;
+    font-weight: bold;
+}
+.btn-contato:hover {
+    text-decoration: underline; 
+}
+footer{
+    color:#474242;
+    text-align:center;
+    padding-bottom: 48px;
+}
